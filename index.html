@@ -7,7 +7,7 @@
 	<h1>My Python Script on GitHub Pages</h1>
 	<p id="output"></p>
 	<script>
-		fetch("https://api.github.com/repos/<your-username>/<your-repository-name>/contents/script.py")
+		fetch("https://api.github.com/repos/lawrencep1989/christies1/contents/script.py")
 			.then(response => response.json())
 			.then(data => atob(data.content))
 			.then(code => {
