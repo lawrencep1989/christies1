@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Python Script on GitHub Pages</title>
+</head>
+<body>
+	<h1>My Python Script on GitHub Pages</h1>
+	<p id="output"></p>
+	<script>
+		fetch("https://api.github.com/repos/<your-username>/<your-repository-name>/contents/script.py")
+			.then(response => response.json())
+			.then(data => atob(data.content))
+			.then(code => {
+				const output = document.getElementById("output");
+				try {
+					const result = eval(code);
+					output.innerText = result;
+				} catch (err) {
+					output.innerText = "Error: " + err.message;
+				}
+			});
+	</script>
+</body>
+</html>
